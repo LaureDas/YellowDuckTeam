@@ -5,26 +5,30 @@
 
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const User = require("../models/User");
+const Library = require("../models/Library");
 
 const bcryptSalt = 10;
 
-require('../configs/database')
+require("../configs/database");
 
-let users = [
+let libraries = [
   {
-    username: "alice",
-    password: bcrypt.hashSync("alice", bcrypt.genSaltSync(bcryptSalt)),
+    name: "Concordia",
+    capacity: 2000
   },
   {
-    username: "bob",
-    password: bcrypt.hashSync("bob", bcrypt.genSaltSync(bcryptSalt)),
+    name: "McGill",
+    capacity: 2500
+  },
+  {
+    name: "Polytechnique",
+    capacity: 1700
   }
-]
+];
 
-User.deleteMany()
+Library.deleteMany()
   .then(() => {
-    return User.create(users)
+    return Library.create(libraries);
   })
   .then(usersCreated => {
     console.log(`${usersCreated.length} users created with the following id:`);
@@ -32,9 +36,9 @@ User.deleteMany()
   })
   .then(() => {
     // Close properly the connection to Mongoose
-    mongoose.disconnect()
+    mongoose.disconnect();
   })
   .catch(err => {
-    mongoose.disconnect()
-    throw err
-  })
+    mongoose.disconnect();
+    throw err;
+  });
