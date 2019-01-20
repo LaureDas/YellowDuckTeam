@@ -1,0 +1,47 @@
+Submission
+
+
+Inspiration
+
+Inspired by the uneven distribution of libraries occupancies !
+It’s very common for all of us to go to the library and struggle to find a seat … Our app allow students to know how full their library is and find another empty one if needed. They can even see their library’s map to find the empty seat!
+ 
+
+What it does
+
+An accelerometer is placed under each chair and detects small movements. If enough small movements are detected in a pre-determined timeframe, the chair is considered occupied
+Our program then collect the data of the library (or public place) and feeds the number of available seats (and share of occupied seats) to the user. 
+
+He can browse in our application for a library with enough free seats to go there. It provides them with useful data to know where 
+From the university’s side, they will have :
+	⁃	occupancy rate and trends
+	⁃	turnover frequency 
+	⁃	occupancy map
+
+
+How we built it
+
+We used an accelerometer and Arduino board as sensor, and made the app with react. We wrote a program trying to ignore fake signals and we consider that a chair is occupied only if there’s more than a signal every X minutes. 
+For the application, we used XXXX framework, coding in Javascript, Html and Css
+
+
+Challenges we ran into
+
+The accelerometer is very sensitive and detects movements all the time, even when it’s still. The challenge was to find how much movement needed to be detected so that it was not a fake signal, but that small real movements were still detected. We decided that movement in all three directions had to be detected to be considered as a real signal. 
+
+We also had a hard time sending the 
+
+
+Accomplishment that we are proud of
+
+We’re very proud to have a functioning sensor detecting quite well normal movements of a student on a chair. 
+
+
+What we learned
+
+We learned how different the competences needed to be
+
+
+What’s next for Libsit
+
+The next step would be to implement the seats’ location and the map feature. Then it would be time to conduct a pilot project on a portion of a library. It would be interesting to see how precise the sensors could be, and to what extent students would use it. Also, we need to ask libraries’ managers if they would be interested in our service. 
